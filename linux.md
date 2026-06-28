@@ -61,6 +61,7 @@ Contoh aktivitas di terminal:
 ## 4. Perintah Dasar Linux
 
 ### Navigasi
+Perintah navigasi digunakan untuk berpindah dan melihat posisi folder serta isi folder di Linux.
 
 ```bash
 pwd
@@ -72,6 +73,15 @@ cd ..
 cd ~
 ```
 
+Penjelasan perintah:
+- `pwd` : menampilkan lokasi direktori saat ini.
+- `ls` : melihat isi folder saat ini.
+- `ls -l` : melihat isi folder dalam format lengkap, termasuk hak akses, pemilik, dan tanggal modifikasi.
+- `ls -a` : melihat semua file termasuk file tersembunyi.
+- `cd` : masuk ke home directory pengguna.
+- `cd ..` : kembali ke folder satu tingkat di atas.
+- `cd ~` : kembali ke direktori home pengguna.
+
 Contoh:
 ```bash
 pwd
@@ -79,6 +89,12 @@ pwd
 
 ls
 # Melihat isi folder
+
+cd Documents
+# Masuk ke folder Documents
+
+cd ..
+# Kembali ke folder sebelumnya
 ```
 
 ### Manajemen Folder
@@ -191,10 +207,15 @@ Konsep:
 rwxr-xr-x
 ```
 
+Arti tiap bagian:
+- `r` = read (bisa membaca)
+- `w` = write (bisa menulis/merubah)
+- `x` = execute (bisa dijalankan)
+
 Hak akses:
-- Owner
-- Group
-- Others
+- Owner : pemilik file
+- Group : pengguna dalam kelompok yang sama
+- Others : pengguna lain di sistem
 
 Perintah:
 
@@ -203,10 +224,32 @@ chmod
 chown
 ```
 
+Penjelasan angka pada `chmod`:
+- Angka pertama untuk owner
+- Angka kedua untuk group
+- Angka ketiga untuk others
+
+Nilai masing-masing:
+- `4` = read
+- `2` = write
+- `1` = execute
+- `0` = tidak ada hak
+
+Contoh kombinasi:
+- `755` = owner mendapat `7` (`4+2+1`), group `5` (`4+1`), others `5` (`4+1`)
+- `644` = owner `6` (`4+2`), group `4`, others `4`
+- `700` = owner penuh akses, group dan others tidak punya akses
+
 Contoh:
 ```bash
 chmod 755 file.txt
-# Memberi hak akses eksekusi kepada owner dan membaca ke semua pengguna
+# Memberi hak akses penuh kepada owner, dan hanya read/execute untuk group serta others
+```
+
+Contoh lain:
+```bash
+chmod 644 file.txt
+# Biasanya dipakai untuk file biasa yang tidak dieksekusi
 ```
 
 ---
