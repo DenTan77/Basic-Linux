@@ -160,7 +160,6 @@ rm -r latihan
 
 ```bash
 cat
-less
 head
 tail
 ```
@@ -289,7 +288,7 @@ Contoh:
 echo $PATH
 # Menampilkan daftar lokasi program yang bisa dijalankan
 
-export MY_NAME="Deni"
+export MY_NAME="Farhan"
 # Membuat variabel MY_NAME dengan nilai Deni
 
 echo $MY_NAME
