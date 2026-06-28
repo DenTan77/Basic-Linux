@@ -51,8 +51,8 @@ git config --list
 
 Contoh:
 ```bash
-git config --global user.name "Deni"
-git config --global user.email "deni@example.com"
+git config --global user.name "Umar"
+git config --global user.email "umar@example.com"
 ```
 
 ---
