@@ -4,8 +4,6 @@
 Setelah mengikuti pelatihan ini, peserta diharapkan mampu:
 - Memahami konsep dasar sistem operasi Linux.
 - Menggunakan terminal Linux untuk kebutuhan sehari-hari.
-- Memahami konsep Version Control System (VCS).
-- Menggunakan Git untuk mengelola proyek secara mandiri maupun kolaboratif.
 - Menghubungkan repository lokal dengan GitHub.
 
 ---
@@ -13,10 +11,17 @@ Setelah mengikuti pelatihan ini, peserta diharapkan mampu:
 # Materi 1: Pengenalan Linux
 
 ## 1. Apa itu Linux?
-- Pengertian Linux
-- Sejarah singkat Linux
-- Distribusi Linux (Ubuntu, Debian, Fedora, Arch)
-- Kelebihan Linux
+Secara umum, Linux adalah sistem operasi yang digunakan untuk mengelola perangkat keras dan menjalankan aplikasi. Linux termasuk sistem operasi open-source yang banyak dipakai karena stabil, aman, dan fleksibel. Sistem ini sering digunakan pada server, laptop, komputer desktop, hingga perangkat embedded.
+
+Contoh sederhana:
+- Saat membuka aplikasi di komputer, Linux membantu sistem menjalankan program tersebut.
+- Banyak website besar memakai Linux karena handal dan aman.
+
+Beberapa hal penting tentang Linux:
+- Pengertian Linux: sistem operasi berbasis kernel Linux.
+- Sejarah singkat Linux: berkembang dari sistem Unix dan diperkenalkan secara luas oleh Linus Torvalds.
+- Distribusi Linux: Ubuntu, Debian, Fedora, dan Arch adalah contoh distribusi yang berbeda sesuai kebutuhan pengguna.
+- Kelebihan Linux:
   - Open Source
   - Stabil
   - Aman
@@ -25,26 +30,31 @@ Setelah mengikuti pelatihan ini, peserta diharapkan mampu:
 ---
 
 ## 2. Struktur Direktori Linux
+Secara umum, Linux memiliki struktur folder yang terorganisir untuk menyimpan file sistem, konfigurasi, dan data pengguna.
 
 | Direktori | Fungsi |
 |-----------|--------|
-| `/` | Root Directory |
-| `/home` | Folder pengguna |
-| `/bin` | Program dasar |
+| `/` | Root Directory, bagian paling atas dari sistem |
+| `/home` | Folder pengguna, tempat file pribadi |
+| `/bin` | Program dasar yang penting untuk sistem |
 | `/etc` | Konfigurasi sistem |
-| `/usr` | Program tambahan |
+| `/usr` | Program tambahan dan pustaka |
 | `/tmp` | File sementara |
 | `/var` | Log dan data aplikasi |
 | `/opt` | Software pihak ketiga |
 
+Contoh: file dokumentasi pengguna biasanya ada di `/home/nama_pengguna`.
+
 ---
 
 ## 3. Terminal Linux
+Terminal adalah antarmuka untuk menjalankan perintah pada Linux. Biasanya pengguna mengakses sistem melalui shell seperti Bash atau Zsh.
 
-- Shell
-- Bash
-- Zsh
-- Perintah dijalankan melalui Terminal
+Contoh aktivitas di terminal:
+- Melihat isi folder
+- Membuat file baru
+- Menginstall aplikasi
+- Mengelola sistem
 
 ---
 
@@ -62,10 +72,25 @@ cd ..
 cd ~
 ```
 
+Contoh:
+```bash
+pwd
+# Menampilkan direktori saat ini
+
+ls
+# Melihat isi folder
+```
+
 ### Manajemen Folder
 
 ```bash
 mkdir folder
+```
+
+Contoh:
+```bash
+mkdir latihan
+# Membuat folder bernama latihan
 ```
 
 ### Membuat File
@@ -74,10 +99,21 @@ mkdir folder
 touch file.txt
 ```
 
+Contoh:
+```bash
+touch catatan.txt
+# Membuat file kosong bernama catatan.txt
+```
+
 ### Menyalin
 
 ```bash
 cp sumber tujuan
+```
+
+Contoh:
+```bash
+cp catatan.txt /home/user/Documents/
 ```
 
 ### Memindahkan
@@ -86,11 +122,22 @@ cp sumber tujuan
 mv file tujuan
 ```
 
+Contoh:
+```bash
+mv catatan.txt latihan/
+```
+
 ### Menghapus
 
 ```bash
 rm file
 rm -r folder
+```
+
+Contoh:
+```bash
+rm catatan.txt
+rm -r latihan
 ```
 
 ### Melihat Isi File
@@ -102,10 +149,23 @@ head
 tail
 ```
 
+Contoh:
+```bash
+cat file.txt
+head -10 file.txt
+tail -10 file.txt
+```
+
 ### Mencari File
 
 ```bash
 find . -name "*.txt"
+```
+
+Contoh:
+```bash
+find . -name "*.md"
+# Mencari semua file berakhiran .md di direktori saat ini
 ```
 
 ### Editor
@@ -115,9 +175,15 @@ nano
 vim
 ```
 
+Contoh:
+```bash
+nano catatan.txt
+```
+
 ---
 
 ## 5. Permission Linux
+Linux menggunakan sistem izin untuk mengatur siapa yang boleh membaca, menulis, atau mengeksekusi file.
 
 Konsep:
 
@@ -137,9 +203,16 @@ chmod
 chown
 ```
 
+Contoh:
+```bash
+chmod 755 file.txt
+# Memberi hak akses eksekusi kepada owner dan membaca ke semua pengguna
+```
+
 ---
 
 ## 6. Package Manager
+Package manager digunakan untuk menginstall dan mengelola perangkat lunak.
 
 Ubuntu:
 
@@ -148,257 +221,27 @@ sudo apt update
 sudo apt install git
 ```
 
+Contoh:
+```bash
+sudo apt install nginx
+# Menginstall web server nginx
+```
+
 ---
 
 ## 7. Environment Variable
+Environment variable adalah variabel yang menyimpan informasi sistem, seperti lokasi program yang dapat dijalankan.
 
 ```bash
 echo $PATH
 export
 ```
 
----
-
-## 8. Latihan Linux
-
-Peserta diminta:
-- Membuat folder
-- Membuat file
-- Mengedit file
-- Menyalin file
-- Memindahkan file
-- Menghapus file
-
----
-
-# Materi 2: Git
-
-## 1. Apa itu Version Control?
-
-Permasalahan:
-
-```
-laporan.docx
-laporan_fix.docx
-laporan_fix2.docx
-laporan_final.docx
-```
-
-Git digunakan untuk mengelola perubahan file secara sistematis.
-
----
-
-## 2. Apa itu Git?
-
-Git adalah Version Control System yang digunakan untuk:
-- Menyimpan riwayat perubahan
-- Kolaborasi
-- Rollback
-- Branching
-
----
-
-## 3. Instalasi Git
-
-```bash
-git --version
-```
-
----
-
-## 4. Konfigurasi Git
-
-```bash
-git config --global user.name "Nama"
-git config --global user.email "email@gmail.com"
-git config --list
-```
-
----
-
-## 5. Membuat Repository
-
-```bash
-mkdir latihan_git
-cd latihan_git
-git init
-```
-
----
-
-## 6. Siklus Kerja Git
-
-```
-Working Directory
-        │
-        ▼
-    git add
-        │
-        ▼
-   Staging Area
-        │
-        ▼
-   git commit
-        │
-        ▼
-    Repository
-```
-
----
-
-## 7. Menambahkan File
-
-```bash
-touch hello.py
-git status
-```
-
----
-
-## 8. Staging
-
-```bash
-git add hello.py
-```
-
-atau
-
-```bash
-git add .
-```
-
----
-
-## 9. Commit
-
-```bash
-git commit -m "Pesan Commit"
-```
-
----
-
-## 10. Riwayat Commit
-
-```bash
-git log
-git log --oneline
-```
-
----
-
-## 11. Branch
-
-Membuat branch
-
-```bash
-git branch feature
-```
-
-Berpindah branch
-
-```bash
-git switch feature
-```
-
-atau
-
-```bash
-git checkout feature
-```
-
----
-
-## 12. Merge
-
-```bash
-git merge feature
-```
-
----
-
-## 13. GitHub
-
-Perbedaan:
-
-- Git → Version Control
-- GitHub → Hosting Repository
-- GitLab → Alternatif GitHub
-
----
-
-## 14. Clone Repository
-
-```bash
-git clone URL
-```
-
----
-
-## 15. Remote Repository
-
-```bash
-git remote add origin URL
-git remote -v
-```
-
----
-
-## 16. Push
-
-```bash
-git push origin main
-```
-
----
-
-## 17. Pull
-
-```bash
-git pull origin main
-```
-
----
-
-## 18. Merge Conflict
-
 Contoh:
-
-```text
-<<<<<<< HEAD
-Hello
-=======
-Halo
->>>>>>> feature
+```bash
+echo $PATH
+export MY_NAME="Deni"
+echo $MY_NAME
 ```
 
-Langkah penyelesaian:
-1. Edit konflik.
-2. Simpan file.
-3. `git add`
-4. `git commit`
-
 ---
-
-# Mini Project
-
-Peserta diminta:
-
-1. Membuat folder proyek menggunakan Terminal Linux.
-2. Membuat beberapa file.
-3. Inisialisasi Git.
-4. Melakukan beberapa commit.
-5. Membuat branch baru.
-6. Menambahkan fitur pada branch tersebut.
-7. Melakukan merge ke branch utama.
-8. Mengunggah repository ke GitHub.
-
----
-
-# Hasil Akhir
-
-Setelah pelatihan, peserta mampu:
-- Menggunakan Terminal Linux.
-- Mengelola file melalui command line.
-- Memahami konsep Version Control.
-- Menggunakan Git untuk pengembangan proyek.
-- Berkolaborasi menggunakan GitHub.
