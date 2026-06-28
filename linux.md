@@ -280,11 +280,20 @@ echo $PATH
 export
 ```
 
+Penjelasan:
+- `echo` digunakan untuk menampilkan nilai dari sebuah variabel atau teks ke terminal.
+- `export` digunakan untuk membuat variabel menjadi tersedia untuk proses atau shell lain dalam sesi yang sedang berjalan.
+
 Contoh:
 ```bash
 echo $PATH
+# Menampilkan daftar lokasi program yang bisa dijalankan
+
 export MY_NAME="Deni"
+# Membuat variabel MY_NAME dengan nilai Deni
+
 echo $MY_NAME
+# Menampilkan nilai variabel MY_NAME
 ```
 
 ---
